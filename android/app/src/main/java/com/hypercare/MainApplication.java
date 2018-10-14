@@ -3,6 +3,13 @@ package com.hypercare;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
+import net.no_mad.tts.TextToSpeechPackage;
+import com.wenkesj.voice.VoicePackage;
+import org.reactnative.camera.RNCameraPackage;
+import com.airbnb.android.react.lottie.LottiePackage;
+import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -22,7 +29,14 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),
+            new RNFusedLocationPackage(),
+            new ReactNativePushNotificationPackage(),
+            new TextToSpeechPackage(),
+            new VoicePackage(),
+            new RNCameraPackage(),
+            new LottiePackage(),
+            new MapsPackage()
       );
     }
 

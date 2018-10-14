@@ -94,8 +94,8 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
 
     defaultConfig {
         applicationId "com.hypercare"
@@ -137,6 +137,19 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-geolocation-service')
+    compile project(':react-native-push-notification')
+    compile project(':react-native-tts')
+    compile project(':react-native-voice')
+    compile (project(':react-native-camera')) {
+    exclude group: "com.google.android.gms"
+    compile 'com.android.support:exifinterface:25.+'
+    compile ('com.google.android.gms:play-services-vision:12.0.1') {
+        force = true
+    }
+    }
+    compile project(':lottie-react-native')
+    compile project(':react-native-maps')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
